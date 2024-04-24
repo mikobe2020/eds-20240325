@@ -1,4 +1,4 @@
-import { addInViewAnimationToSingleElement } from '../../utils/helpers.js';
+// import { addInViewAnimationToSingleElement } from '../../utils/helpers.js';
 
 function createSelect(fd) {
   const select = document.createElement('select');
@@ -37,7 +37,7 @@ function constructPayload(form) {
 async function submitForm(form) {
   const payload = constructPayload(form);
   payload.timestamp = new Date().toJSON();
-  const resp = await fetch(`https://form.aem.page/main--helix-website--adobe${form.dataset.action}`, {
+  const resp = await fetch(form.dataset.action, {
     method: 'POST',
     cache: 'no-cache',
     headers: {
@@ -192,7 +192,6 @@ export async function createForm(formURL) {
 
 export default async function decorate(block) {
   const form = block.querySelector('a[href$=".json"]');
-  addInViewAnimationToSingleElement(block, 'fade-up');
   if (form) {
     form.replaceWith(await createForm(form.href));
   }
