@@ -17,7 +17,7 @@
   --background-color: white;
   --light-color: #eee;
   --dark-color: #ccc;
-  --text-color: black;
+  --text-color: blue;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback;
@@ -50,7 +50,7 @@
 
 @media (width >= 900px) {
   :root {
-    --heading-font-size-xxl: 260px;
+    --heading-font-size-xxl: 60px;
     --heading-font-size-xl: 48px;
     --heading-font-size-l: 36px;
     --heading-font-size-m: 30px;
